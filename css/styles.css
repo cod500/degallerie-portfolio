@@ -355,3 +355,9 @@ html.fancybox-lock {
 .navbar-inverse .navbar-nav>li>a:focus {
     color: black !important;
 }
+
+@media(max-width: 450px) {
+    section.home-intro h1 {
+        font-size: 40px;
+    }
+}
