@@ -3,6 +3,12 @@ $(window).on('load', function () {
         $('.loader').fadeOut(550)
     });
 
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particle-div', 'assets/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+
+
     $('.items').isotope({
         filter: '*',
         animationOptions: {
@@ -87,6 +93,7 @@ $(document).ready(function () {
         })
         return false;
     });
+
 
 
 });
