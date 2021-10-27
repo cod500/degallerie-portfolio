@@ -93,8 +93,13 @@ section.home-intro h1 {
   line-height: 1.6;
 }
 
-.project-div p {
+.project-div p,
+.project-div a {
   letter-spacing: 2px;
+  color: #212529;
+}
+
+.hover-tag:hover {
   color: #212529;
 }
 
