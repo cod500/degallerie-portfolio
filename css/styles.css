@@ -4,7 +4,18 @@
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Karla", sans-serif;
+  font-size: 98%;
+}
+
+video {
+  border-radius: 8px;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  outline: none !important;
 }
 
 .dots-container {
@@ -23,12 +34,11 @@
 }
 .name {
   padding-top: 175px;
-  padding-bottom: 200px;
+  padding-bottom: 0px;
 }
 
 .name h1 {
   font-weight: 700;
-  /* font-family: "Abril Fatface", cursive; */
   font-family: Butler;
   font-size: 900px;
 }
@@ -38,6 +48,16 @@
   position: relative;
 }
 
+.name ul {
+  z-index: 98;
+  position: relative;
+}
+
+.name ul a {
+  text-decoration: none;
+}
+
+/* Navebar styles */
 .navbar {
   margin-bottom: 0;
   border: none;
@@ -61,11 +81,61 @@ a.nav-link {
 }
 
 a.nav-link:hover {
-  color: #48a09b;
+  color: #4b6cc1;
 }
 .nav-logo {
   width: 50px;
 }
+.navbar {
+  background: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: black !important;
+}
+/* End Navbar styles */
+
+/* Social icon bounce */
+.bounce-icons:hover {
+  animation: bounce 2s infinite;
+}
+
+/* End social icon bounce */
+
+/* Arrow Bounce  */
+.arrow {
+  text-align: center;
+  margin: 300px 0 125px 0;
+  font-weight: 800;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+.arrow i {
+  font-weight: 800;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* End Arrow Bounce */
 
 section {
   background-size: cover;
@@ -93,42 +163,131 @@ section.home-intro h1 {
   line-height: 1.6;
 }
 
+/* Project styles */
+
 .project-div p,
 .project-div a {
   letter-spacing: 2px;
   color: #212529;
 }
 
+/* Ripple effect on project divs */
 .hover-tag:hover {
   color: #212529;
 }
 
+@-webkit-keyframes ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    visibility: visible;
+  }
+}
+
+.ripple-out {
+  cursor: pointer;
+  border-radius: 7px !important;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  outline: none;
+}
+
+.ripple-out:before {
+  content: "";
+  position: absolute;
+  border: #4b6cc1 solid 1px;
+  visibility: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  border-radius: 7px !important;
+  outline: none;
+}
+
+.ripple-out:hover:before,
+.ripple-out:focus:before,
+.ripple-out:active:before {
+  -webkit-animation-name: ripple-out;
+  animation-name: ripple-out;
+}
+/* End ripple effects on project divs */
+
+/* End Project styles */
+
+/* Project Pop up styles */
+ul.tools-used {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-content: center;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.tools-used li {
+  font-size: 14px;
+  display: flex;
+  list-style: none;
+  background-color: #a4b5bf;
+  color: #fff;
+  padding: 2px 5px;
+  margin: 5px;
+  width: auto;
+  border-radius: 50px;
+  justify-content: center;
+}
+
+ul.tools-used button {
+  margin: 0 5px;
+}
+
+ul.tools-used a {
+  color: #fff;
+}
+
 .technologies img {
-  width: 120px;
-  height: 120px;
+  width: 70px;
+  height: 70px;
   margin: 20px 0;
   padding: 5px;
 }
 
-#hidden-tech-1,
-#hidden-tech-2,
-#hidden-tech-3,
-#hidden-tech-4,
-#hidden-tech-5,
-#hidden-tech-6,
-#hidden-tech-7,
-#hidden-tech-8,
-#hidden-tech-9,
-#hidden-tech-10 {
-  visibility: hidden;
+.demo-text {
+  font-size: 18px;
 }
 
-@media (min-width: 768px) {
-  section.home-intro h1 {
-    font-size: 90px;
-  }
+.demo-btns {
+  margin: 20px 0 100px 0;
 }
+/* End Project Pop up styles */
 
+/* Home section styles */
 section.home-intro h2 {
   font-weight: 700;
   font-size: 22px;
@@ -138,12 +297,6 @@ section.home-intro h2 {
   margin-bottom: 13px;
   border-top: 3px solid #363b3a;
   display: inline-block;
-}
-
-@media (min-width: 768px) {
-  section.home-intro h2 {
-    font-size: 32px;
-  }
 }
 
 section.home-intro ul {
@@ -163,13 +316,13 @@ section.home-intro ul li a {
 section.home-intro ul li a:hover,
 section.home-intro ul li a:focus,
 section.home-intro ul li a:active {
-  color: #48a09b;
+  color: #4b6cc1;
 }
 
 section.about {
-  background-color: #a4b5bf;
-  color: #fefdeb;
-  font-family: "Cantarell", sans-serif;
+  background-color: #1d1d1d;
+  color: #fff;
+  font-family: "Karla", sans-serif;
 }
 
 section.about p {
@@ -185,15 +338,25 @@ section.about blockquote {
 }
 
 section.portfolio {
-  background-color: #9de0ad;
+  background-color: #fff;
 }
 
 section.portfolio h2 {
   margin-top: 40px;
   margin-bottom: 40px;
-  font-family: "Cantarell", sans-serif;
+  font-family: "Karla", sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
+  display: inline-block;
+}
+
+.project-list:after {
+  background: #4b6cc1;
+  border-radius: 1000px;
+  content: "";
+  display: block;
+  height: 6px;
+  max-width: 45px;
+  width: 100%;
 }
 
 section.portfolio .project {
@@ -228,6 +391,7 @@ section.portfolio .project .overlay {
   transition: opacity 0.3s ease-in-out;
   border: solid 0 #363b3a;
   border-radius: 7px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 section.portfolio .project .overlay h4 {
@@ -235,9 +399,9 @@ section.portfolio .project .overlay h4 {
   vertical-align: middle;
   text-align: center;
   text-transform: uppercase;
-  font-family: "Cantarell", sans-serif;
+  font-family: "Karla", sans-serif;
   font-size: 24px;
-  color: #cdd7b6;
+  color: #ffffff;
 }
 
 section.portfolio .project:hover .overlay,
@@ -251,25 +415,19 @@ section.portfolio .project:hover .overlay h4 {
 }
 
 section.contact {
-  background-color: #594f4f;
+  background-color: #1d1d1d;
 }
 
 section.contact h2 {
-  font-family: "Cantarell", sans-serif;
+  font-family: "Karla", sans-serif;
   font-weight: 700;
   font-size: 22px;
   color: #cdd7b6;
   text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
-  section.contact h2 {
-    font-size: 28px;
-  }
-}
-
 section.contact h3 a {
-  font-family: "Cantarell", sans-serif;
+  font-family: "Karla", sans-serif;
   font-weight: 700;
   font-size: 28px;
   text-transform: uppercase;
@@ -282,12 +440,6 @@ section.contact h3 a:hover,
 section.contact h3 a:focus,
 section.contact h3 a:active {
   color: #48a09b;
-}
-
-@media (min-width: 768px) {
-  section.contact h3 a {
-    font-size: 42px;
-  }
 }
 
 section .vcenter {
@@ -344,7 +496,9 @@ section .vcenter .row div[class^="col-"] {
   opacity: 1;
   visibility: visible;
 }
+/* End Home section styles */
 
+/* Loader styles */
 .loader {
   width: 100%;
   height: 100%;
@@ -361,7 +515,9 @@ section .vcenter .row div[class^="col-"] {
   background: url("../img/fader_black.gif") center center no-repeat;
   z-index: 999;
 }
+/* End loader styles */
 
+/* Project div overlay styles */
 .overlay {
   width: 100%;
   height: 100%;
@@ -406,25 +562,286 @@ html.fancybox-lock {
 }
 .contact #connect-span {
   font-weight: 700;
-  font-family: "Cantarell", sans-serif;
+  font-family: "Karla", sans-serif;
   font-size: 28px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #48a09b;
+  color: #4b6cc1;
   transition: color 0.3s linear;
 }
+/* End project div overlay */
 
-.navbar {
-  background: transparent;
+/* Button styles for project div */
+.main-btn-rect,
+.main-btn-circle {
+  position: relative;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #fffff0;
+  background-color: rgb(75, 108, 193);
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 8px;
+}
+.main-btn-rect {
+  /* padding: 10px 80px; */
+  /* line-height: 30px; */
+}
+.main-btn-rect:before,
+.main-btn-rect:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(255, 255, 240, 0.2);
+  -webkit-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+}
+.main-btn-rect:before {
+  left: 0;
+}
+.main-btn-rect:after {
+  right: 0;
+}
+.main-btn-rect:hover:before,
+.main-btn-rect:hover:after {
+  width: 50%;
+}
+.main-btn-circle {
+  height: 40px;
+  width: 40px;
+  -webkit-border-radius: 50%;
+  border-radius: 100%;
+  line-height: 40px;
+  -webkit-transition: box-shadow 0.3s;
+  -o-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+}
+.main-btn-circle:hover {
+  -webkit-box-shadow: inset 2px 1px 0px 20px rgba(255, 255, 240, 0.2);
+  -moz-box-shadow: inset 2px 1px 0px 20px rgba(255, 255, 240, 0.2);
+  box-shadow: inset 2px 1px 0px 20px rgba(255, 255, 240, 0.2);
+}
+/* End button styles for div */
+
+/* Project Pop up styles */
+.popup {
+  position: fixed;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  transition: background-color 0.02s, opacity 0.02s;
+}
+.popup.active {
+  top: 0;
+  background-color: rgba(3, 3, 3, 0.9);
+  transition: background-color 0.1s, opacity 0.1s;
+  transition: top 0s;
+}
+.popup .main-btn-rect {
+  padding: 10px 100px;
+}
+.popup .popup-content {
+  width: 80%;
+  max-width: 1000px;
+  min-width: 300px;
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 320px;
+  margin-top: 150px;
+  padding: 25px;
+  background-color: #fff;
+  color: #070000;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transition: margin 0.6s;
+  -webkit-transition: margin 0.6s;
+  -moz-transition: margin 0.6s;
+  -o-transition: margin 0.6s;
+}
+.popup.active .popup-content {
+  margin-top: 0px;
+}
+.popup-content h6 {
+  display: table;
+  font-size: 16px;
+  text-align: center;
+  margin: 10px auto;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus {
-  color: black !important;
+.popup-content h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.popup .fade-out {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  text-align: center;
+  font-size: 15px;
+}
+/* End pop project div styles */
+
+/* Fade in Div styles */
+.fadeInRight {
+  animation: fadeInRight 0.7s ease 0.1s both;
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 0.7s ease 0.1s both;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* End fade in div styles */
+
+/* Project button ripple effect */
+@-webkit-keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+.hvr-ripple-out {
+  background-color: #4b6cc1;
+  cursor: pointer;
+  border-radius: 40px !important;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  outline: none;
+}
+
+.hvr-ripple-out:before {
+  content: "";
+  position: absolute;
+  border: #4b6cc1 solid 3px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  border-radius: 40px !important;
+  outline: none;
+}
+
+.hvr-ripple-out:hover:before,
+.hvr-ripple-out:focus:before,
+.hvr-ripple-out:active:before {
+  -webkit-animation-name: hvr-ripple-out;
+  animation-name: hvr-ripple-out;
+}
+/* End project button ripple effect */
+
+@media (min-width: 768px) {
+  section.home-intro h1 {
+    font-size: 90px;
+  }
+
+  section.home-intro h2 {
+    font-size: 32px;
+  }
+
+  section.contact h2 {
+    font-size: 28px;
+  }
+
+  section.contact h3 a {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+  form#send .main-btn-rect {
+    padding: 7px 60px;
+    font-size: 14px;
+  }
+  .popup-btn {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 450px) {
   section.home-intro h1 {
     font-size: 40px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .fadeInRight .animated {
+    animation: unset !important;
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .fadeInLeft .animated {
+    animation: unset !important;
+    transition: none !important;
   }
 }

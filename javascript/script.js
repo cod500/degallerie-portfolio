@@ -2,26 +2,67 @@ $(window).on('load', function () {
     $('.loader .inner').fadeOut(500, function () {
         $('.loader').fadeOut(550)
     });
-
-    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-    particlesJS.load('particle-div', 'assets/particles.json', function () {
-        console.log('callback - particles.js config loaded');
-    });
-
-
-    $('.items').isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 1500,
-            easing: 'linear',
-            queue: false
-        }
-    })
 })
 
 $(document).ready(function () {
 
-    var btn = $('#button');
+    // Fade in Effect for page scroll
+    function Utils() { }
+    Utils.prototype = {
+        constructor: Utils,
+        isElementInView: function (element, fullyInView) {
+            let pageTop = $(window).scrollTop();
+            let pageBottom = pageTop + $(window).height();
+            let elementTop = $(element).offset().top;
+            let elementBottom = elementTop + $(element).height();
+
+            if (fullyInView === true) {
+                return pageTop < elementTop && pageBottom > elementBottom;
+            } else {
+                return elementTop <= pageBottom && elementBottom >= pageTop;
+            }
+        }
+    };
+
+    var Utils = new Utils();
+    $(window).on("load", addFadeIn());
+
+    $(window).scroll(function () {
+        addFadeIn(true);
+    });
+
+    function addFadeIn(repeat) {
+        let classToFadeIn = ".will-fadeIn";
+
+        $(classToFadeIn).each(function (index) {
+            let isElementInView = Utils.isElementInView($(this), false);
+            if (isElementInView) {
+                if (!$(this).hasClass("fadeInRight") && !$(this).hasClass("fadeInLeft")) {
+                    if (index % 2 == 0) $(this).addClass("fadeInRight");
+                    else $(this).addClass("fadeInLeft");
+                }
+            }
+            // else if (repeat) {
+            //     $(this).removeClass("fadeInRight");
+            //     $(this).removeClass("fadeInLeft");
+            // }
+        });
+    }
+    // End Fade in effect
+
+    // Pop up effect for project demos
+    $('.popup-btn').click(function () {
+        let popupBlock = $('#' + $(this).data('popup'));
+        popupBlock.addClass('active')
+            .find('.fade-out').click(function () {
+                popupBlock.css('opacity', '0').find('.popup-content').css('margin-top', '350px');
+                setTimeout(function () {
+                    $('.popup').removeClass('active');
+                    popupBlock.css('opacity', '').find('.popup-content').css('margin-top', '');
+                }, 600);
+            });
+    });
+    let btn = $('#button');
 
     $(window).scroll(function () {
         if ($(window).scrollTop() > 300) {
@@ -36,64 +77,5 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: 0 }, '300');
     });
 
-    let projectDiv = document.querySelectorAll('.project-div');
-
-    for (let project of projectDiv) {
-        project.addEventListener('mouseenter', function () {
-            console.log(project.getAttribute("id"));
-            let projectId = project.getAttribute("id");
-
-            $('#' + projectId).mouseover(function () {
-                console.log($("#" + projectId + ' h4').attr('id'));
-                console.log($("#" + projectId + ' p').attr('id'));
-                $("#" + projectId + ' p').css('visibility', 'visible');
-
-            });
-
-            $('#' + projectId).mouseout(function () {
-                $("#" + projectId + ' p').css('visibility', 'hidden');
-
-            });
-        })
-    }
-
-
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        items: 4,
-        responsive: {
-            0: {
-                items: 1
-            },
-            480: {
-                items: 2
-            },
-            768: {
-                items: 3
-            },
-            938: {
-                items: 4
-            }
-        }
-    });
-
-    $('#filters a').click(function () {
-        $('#filters .current').removeClass('current');
-        $(this).addClass('current');
-
-        let selector = $(this).attr('data-filter');
-
-        $('.items').isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 1500,
-                easing: 'linear',
-                queue: false
-            }
-        })
-        return false;
-    });
-
-
-
+    // End Pop up effect for project demos
 });
