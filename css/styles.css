@@ -37,6 +37,10 @@ button {
   padding-bottom: 0px;
 }
 
+.name-logo {
+  width: 60%;
+}
+
 .name h1 {
   font-weight: 700;
   font-family: Butler;
@@ -55,6 +59,16 @@ button {
 
 .name ul a {
   text-decoration: none;
+}
+
+.about-text p {
+  font-size: 8px;
+}
+
+.profile-img {
+  width: 275px;
+  padding: 25px;
+  border-radius: 30px;
 }
 
 /* Navebar styles */
@@ -97,6 +111,10 @@ a.nav-link:hover {
 /* End Navbar styles */
 
 /* Social icon bounce */
+i.bounce-icons {
+  font-size: 4em;
+}
+
 .bounce-icons:hover {
   animation: bounce 2s infinite;
 }
@@ -106,7 +124,7 @@ a.nav-link:hover {
 /* Arrow Bounce  */
 .arrow {
   text-align: center;
-  margin: 300px 0 125px 0;
+  margin: 100px 0 100px 0;
   font-weight: 800;
 }
 .bounce {
@@ -284,6 +302,7 @@ ul.tools-used a {
 
 .demo-btns {
   margin: 20px 0 100px 0;
+  text-align: center;
 }
 /* End Project Pop up styles */
 
@@ -323,10 +342,13 @@ section.about {
   background-color: #1d1d1d;
   color: #fff;
   font-family: "Karla", sans-serif;
+  /* width: 98%;
+  margin-left: 1%;
+  border-radius: 12px; */
 }
 
 section.about p {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 2px;
@@ -448,7 +470,7 @@ section .vcenter {
 
 section .vcenter .row {
   height: 100%;
-  display: table;
+  /* display: table; */
 }
 
 section .vcenter .row div[class^="col-"] {
@@ -817,18 +839,21 @@ html.fancybox-lock {
   h2 {
     font-size: 14px;
   }
-  form#send .main-btn-rect {
-    padding: 7px 60px;
-    font-size: 14px;
+  .name-logo {
+    width: 70%;
   }
+  i.bounce-icons {
+    font-size: 3em;
+  }
+
   .popup-btn {
     font-size: 14px;
   }
 }
 
-@media (max-width: 450px) {
-  section.home-intro h1 {
-    font-size: 40px;
+@media (max-width: 696px) {
+  .profile-img {
+    width: 225px;
   }
 }
 
@@ -844,4 +869,63 @@ html.fancybox-lock {
     animation: unset !important;
     transition: none !important;
   }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+.profile-container {
+  border-radius: 50%;
+  height: 312px;
+  -webkit-tap-highlight-color: transparent;
+  transform: scale(0.48);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 400px;
+}
+.profile-container:after {
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: 390px;
+  width: 100%;
+}
+.profile-container:hover {
+  transform: scale(0.54);
+}
+.profile-container-inner {
+  clip-path: path(
+    "M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z"
+  );
+  position: relative;
+  transform-origin: 50%;
+  top: -200px;
+}
+.circle {
+  border-radius: 50%;
+  cursor: pointer;
+  height: 380px;
+  left: 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 210px;
+  width: 380px;
+}
+.profile-image {
+  pointer-events: none;
+  position: relative;
+  transform: translateY(20px) scale(1.15);
+  transform-origin: 50% bottom;
+  transition: transform 300ms;
+  cursor: alias;
+}
+.profile-container:hover .profile-image {
+  /* transform: translateY(0) scale(1.2); */
+  zoom: 115%;
+}
+.img1 {
+  left: 22px;
+  top: 164px;
+  width: 340px;
 }
