@@ -893,6 +893,13 @@ html.fancybox-lock {
 }
 /* End project button ripple effect */
 
+/* Label form styles */
+label {
+  color: #fff;
+}
+
+/* End Label form styles */
+
 @media (min-width: 768px) {
   section.home-intro h1 {
     font-size: 90px;
