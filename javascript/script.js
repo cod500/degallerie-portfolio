@@ -1,7 +1,22 @@
 $(window).on('load', function () {
-    $('.loader .inner').fadeOut(500, function () {
-        $('.loader').fadeOut(550)
+    $('.loader .inner').fadeOut(200, function () {
+        $('.loader').fadeOut(250)
     });
+
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    // particlesJS.load('particle-div', 'assets/particles.json', function () {
+    //     console.log('callback - particles.js config loaded');
+    // });
+
+
+    // $('.items').isotope({
+    //     filter: '*',
+    //     animationOptions: {
+    //         duration: 1500,
+    //         easing: 'linear',
+    //         queue: false
+    //     }
+    // })
 })
 
 $(document).ready(function () {
