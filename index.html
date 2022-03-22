@@ -30,6 +30,7 @@
     <script src="javascript/jquery.js"></script>
     <script src="javascript/particles.js"></script>
     <script src="javascript/script.js"></script>
+    <script src="javascript/test.js"></script>
 </head>
 
 <body>
@@ -40,6 +41,49 @@
 
     <!-- Project Demos -->
     <div class="demos">
+        <!-- Degall News Demo -->
+        <div id="popup-news" class="popup">
+            <div class="popup-content">
+                <div class="row">
+                    <div class="col-lg-8 col-m-8 col-sm-12">
+                        <video autoplay loop muted playsinline crossorigin="anonymous"
+                            style="width: 100%; height: 100%;">
+                            <source src="/img/demos/news-demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="col-lg-4 col-m-4 col-sm-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>Degall News</h2>
+                            </div>
+                            <div class="col-12 demo-text">
+                                A React news website using the GNews API. Users can search for news and share articles
+                                via social media.
+                            </div>
+                            <div class="col-12">
+                                <ul class="tools-used">
+                                    <li>React</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                </ul>
+                            </div>
+                            <div class="col-12">
+                                <ul class="tools-used">
+                                    <a href="https://cod-news.netlify.app/" target="_blank"><button type="button"
+                                            class="btn popup-btn hvr-ripple-out">Live Page</button></a>
+
+                                    <a href="https://github.com/cod500/tech-news" target="_blank"><button type="button"
+                                            class="btn popup-btn hvr-ripple-out">Github</button></a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="fade-out main-btn-circle">╳</span>
+            </div>
+        </div>
+        <!-- End Community Groups Demo -->
         <!-- Community Groups Demo -->
         <div id="popup-groups" class="popup">
             <div class="popup-content">
@@ -196,7 +240,7 @@
                             <div class="col-12">
                                 <ul class="tools-used">
                                     <li>NodeJS</li>
-                                    <li>Materialize</li>
+                                    <li>Bootstrap</li>
                                     <li>MongoDB</li>
                                 </ul>
                             </div>
@@ -239,8 +283,8 @@
                             <div class="col-12">
                                 <ul class="tools-used">
                                     <li>NodeJS</li>
-                                    <li>Materialize</li>
-                                    <li>MongoDB</li>
+                                    <li>PostgreSQL
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-12">
@@ -369,7 +413,6 @@
                                 <ul class="tools-used">
                                     <li>Python</li>
                                     <li>Django</li>
-                                    <li>NodeJS</li>
                                 </ul>
                             </div>
                             <div class="col-12">
@@ -661,19 +704,19 @@
                             </div>
                         </div>
                         <div class="row">
-
-                            <div class="col-m-12 col-lg-3 justify-content-center project-div will-fadeIn" id="message">
-                                <a href="https://degallerie-groups.netlify.app" target="_blank">
-                                    <div class="project ripple-out" style="background-image:url(img/groups-app.png)">
+                            <!-- /.col-sm-3 -->
+                            <div class="col-m-12 col-lg-3 justify-content-center project-div will-fadeIn" id="news">
+                                <a href="https://cod-news.netlify.app/" target="_blank">
+                                    <div class="project ripple-out" style="background-image:url(img/news-screen.png)">
                                         <div class="overlay">
                                             <!-- <h4 id="project-1">Message Board<h4> -->
-                                            <h4 id="project-2">Community Groups</h4>
+                                            <h4 id="project-2">Degall News</h4>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="demo-btns">
                                     <button type="button" class=" btn popup-btn hvr-ripple-out"
-                                        data-popup="popup-groups">View
+                                        data-popup="popup-news">View
                                         Demo</button>
                                     <!-- <button type="button" class=" btn popup-btn hvr-ripple-out"><a href=""></a>Source
                                         Code</button> -->
@@ -697,17 +740,18 @@
                                 </div>
                             </div>
                             <!-- /.col-sm-3 -->
-                            <div class="col-m-12 col-lg-3 project-div will-fadeIn" id="social">
-                                <a href="https://developosts.herokuapp.com" target="_blank">
-                                    <div class="project ripple-out" style="background-image:url(img/socialmedia.png)">
+                            <div class="col-m-12 col-lg-3 justify-content-center project-div will-fadeIn" id="message">
+                                <a href="https://degallerie-groups.netlify.app" target="_blank">
+                                    <div class="project ripple-out" style="background-image:url(img/groups-app.png)">
                                         <div class="overlay">
-                                            <h4 id="project-3">DeveloPosts</h4>
+                                            <!-- <h4 id="project-1">Message Board<h4> -->
+                                            <h4 id="project-2">Community Groups</h4>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="demo-btns">
                                     <button type="button" class=" btn popup-btn hvr-ripple-out"
-                                        data-popup="popup-social">View
+                                        data-popup="popup-groups">View
                                         Demo</button>
                                     <!-- <button type="button" class=" btn popup-btn hvr-ripple-out"><a href=""></a>Source
                                         Code</button> -->
@@ -834,6 +878,23 @@
                                     <button type="button" class=" btn popup-btn hvr-ripple-out"
                                         data-popup="popup-pets">View
                                         Demo</button>
+                                </div>
+                            </div>
+                            <!-- /.col-sm-3 -->
+                            <div class="col-m-12 col-lg-3 project-div will-fadeIn" id="social">
+                                <a href="https://developosts.herokuapp.com" target="_blank">
+                                    <div class="project ripple-out" style="background-image:url(img/socialmedia.png)">
+                                        <div class="overlay">
+                                            <h4 id="project-3">DeveloPosts</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="demo-btns">
+                                    <button type="button" class=" btn popup-btn hvr-ripple-out"
+                                        data-popup="popup-social">View
+                                        Demo</button>
+                                    <!-- <button type="button" class=" btn popup-btn hvr-ripple-out"><a href=""></a>Source
+                                        Code</button> -->
                                 </div>
                             </div>
 
