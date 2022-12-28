@@ -1,6 +1,6 @@
 $(window).on('load', function () {
     $('.loader .inner').fadeOut(100, function () {
-        $('.loader').fadeOut(150)
+        $('.loader').fadeOut(100)
     });
 
     /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
